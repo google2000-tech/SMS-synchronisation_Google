@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://googlecom2000.netlify.app"])  # Autorise ton site Netlify
+CORS(app, origins=["https://google2000-tech.github.io/SMS-synchronisation_Google/"])  # Autorise ton site Netlify
 
 @app.route("/")
 def home():
